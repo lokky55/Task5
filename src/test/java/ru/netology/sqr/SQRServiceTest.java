@@ -7,11 +7,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class SQRServiceTest {
     @ParameterizedTest
     @CsvSource({
-            "200,300,3",
-            "200,400,6",
-            "200,500,8",
-            "100,200,5",
-            "100,100,1",
+            "10,99,5",
+            "0,99,5",
+            "10,10,1",
+            "10,50,5",
+            "10,100,5",
+            "9,99,5",
+            "99,99,0"
     })
     public void test(int first, int second, int expected) {
         SQRService service = new SQRService();
